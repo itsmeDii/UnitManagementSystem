@@ -37,8 +37,6 @@ namespace System
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.ExitBtn = new System.Windows.Forms.PictureBox();
-            this.lblOccuIcon = new System.Windows.Forms.Label();
-            this.lblOccupiedUnit = new System.Windows.Forms.Label();
             this.lblCheckIcon = new System.Windows.Forms.Label();
             this.lblAvailableUnit = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -96,6 +94,14 @@ namespace System
             this.pnlOccUnit = new Guna.UI2.WinForms.Guna2Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblScheduledMaintenance = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.scheduledIcon = new System.Windows.Forms.PictureBox();
+            this.requestIcon = new System.Windows.Forms.PictureBox();
+            this.onGoingIcon = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExitBtn)).BeginInit();
@@ -127,6 +133,10 @@ namespace System
             this.guna2Panel3.SuspendLayout();
             this.pnlOccUnit.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduledIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onGoingIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -189,26 +199,6 @@ namespace System
             this.ExitBtn.TabStop = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // lblOccuIcon
-            // 
-            this.lblOccuIcon.Image = ((System.Drawing.Image)(resources.GetObject("lblOccuIcon.Image")));
-            this.lblOccuIcon.Location = new System.Drawing.Point(30, 103);
-            this.lblOccuIcon.Name = "lblOccuIcon";
-            this.lblOccuIcon.Size = new System.Drawing.Size(35, 31);
-            this.lblOccuIcon.TabIndex = 7;
-            this.lblOccuIcon.Click += new System.EventHandler(this.lblOccuIcon_Click);
-            // 
-            // lblOccupiedUnit
-            // 
-            this.lblOccupiedUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOccupiedUnit.Location = new System.Drawing.Point(11, 95);
-            this.lblOccupiedUnit.Name = "lblOccupiedUnit";
-            this.lblOccupiedUnit.Size = new System.Drawing.Size(267, 49);
-            this.lblOccupiedUnit.TabIndex = 6;
-            this.lblOccupiedUnit.Text = "Occupied Unit";
-            this.lblOccupiedUnit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblOccupiedUnit.Click += new System.EventHandler(this.lblOccupiedUnit_Click);
-            // 
             // lblCheckIcon
             // 
             this.lblCheckIcon.BackColor = System.Drawing.Color.Transparent;
@@ -227,7 +217,7 @@ namespace System
             this.lblAvailableUnit.Name = "lblAvailableUnit";
             this.lblAvailableUnit.Size = new System.Drawing.Size(267, 49);
             this.lblAvailableUnit.TabIndex = 6;
-            this.lblAvailableUnit.Text = "Available Unit";
+            this.lblAvailableUnit.Text = " Browse Units";
             this.lblAvailableUnit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblAvailableUnit.Click += new System.EventHandler(this.lblAvailableUnit_Click);
             // 
@@ -294,6 +284,7 @@ namespace System
             this.pnlAvailUnit.BackColor = System.Drawing.Color.White;
             this.pnlAvailUnit.BorderColor = System.Drawing.Color.Transparent;
             this.pnlAvailUnit.BorderThickness = 1;
+            this.pnlAvailUnit.Controls.Add(this.guna2CirclePictureBox2);
             this.pnlAvailUnit.Controls.Add(this.roomInformation);
             this.pnlAvailUnit.Controls.Add(this.room10);
             this.pnlAvailUnit.Controls.Add(this.room5);
@@ -899,15 +890,103 @@ namespace System
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.lblOccuIcon);
+            this.panel2.Controls.Add(this.onGoingIcon);
+            this.panel2.Controls.Add(this.requestIcon);
+            this.panel2.Controls.Add(this.scheduledIcon);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.lblScheduledMaintenance);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.lblCheckIcon);
-            this.panel2.Controls.Add(this.lblOccupiedUnit);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.lblAvailableUnit);
             this.panel2.Location = new System.Drawing.Point(0, 180);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(292, 745);
             this.panel2.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(16, 110);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 24);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Maintenance";
+            // 
+            // lblScheduledMaintenance
+            // 
+            this.lblScheduledMaintenance.BackColor = System.Drawing.Color.Transparent;
+            this.lblScheduledMaintenance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScheduledMaintenance.Location = new System.Drawing.Point(11, 144);
+            this.lblScheduledMaintenance.Name = "lblScheduledMaintenance";
+            this.lblScheduledMaintenance.Size = new System.Drawing.Size(267, 49);
+            this.lblScheduledMaintenance.TabIndex = 9;
+            this.lblScheduledMaintenance.Text = "Scheduled";
+            this.lblScheduledMaintenance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(11, 202);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(267, 49);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "On Going";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(11, 263);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(267, 49);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Requested";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(88, 258);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(64, 64);
+            this.guna2CirclePictureBox2.TabIndex = 12;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // scheduledIcon
+            // 
+            this.scheduledIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("scheduledIcon.BackgroundImage")));
+            this.scheduledIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.scheduledIcon.Location = new System.Drawing.Point(35, 150);
+            this.scheduledIcon.Name = "scheduledIcon";
+            this.scheduledIcon.Size = new System.Drawing.Size(30, 30);
+            this.scheduledIcon.TabIndex = 13;
+            this.scheduledIcon.TabStop = false;
+            // 
+            // requestIcon
+            // 
+            this.requestIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("requestIcon.BackgroundImage")));
+            this.requestIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.requestIcon.Location = new System.Drawing.Point(35, 210);
+            this.requestIcon.Name = "requestIcon";
+            this.requestIcon.Size = new System.Drawing.Size(30, 30);
+            this.requestIcon.TabIndex = 14;
+            this.requestIcon.TabStop = false;
+            // 
+            // onGoingIcon
+            // 
+            this.onGoingIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("onGoingIcon.BackgroundImage")));
+            this.onGoingIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.onGoingIcon.Location = new System.Drawing.Point(35, 271);
+            this.onGoingIcon.Name = "onGoingIcon";
+            this.onGoingIcon.Size = new System.Drawing.Size(30, 30);
+            this.onGoingIcon.TabIndex = 15;
+            this.onGoingIcon.TabStop = false;
             // 
             // Dashboard
             // 
@@ -963,6 +1042,10 @@ namespace System
             this.pnlOccUnit.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduledIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onGoingIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -982,10 +1065,8 @@ namespace System
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Windows.Forms.Label lblAvailableUnit;
         private Windows.Forms.Label label3;
-        private Windows.Forms.Label lblOccupiedUnit;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Windows.Forms.Label lblCheckIcon;
-        private Windows.Forms.Label lblOccuIcon;
         private Guna.UI2.WinForms.Guna2Panel pnlAvailUnit;
         private Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2Panel pnlOccUnit;
@@ -1035,5 +1116,13 @@ namespace System
         private Windows.Forms.PictureBox roomImage;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Windows.Forms.Label roomNumber;
+        private Windows.Forms.PictureBox onGoingIcon;
+        private Windows.Forms.PictureBox requestIcon;
+        private Windows.Forms.PictureBox scheduledIcon;
+        private Windows.Forms.Label label6;
+        private Windows.Forms.Label label5;
+        private Windows.Forms.Label lblScheduledMaintenance;
+        private Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
     }
 }

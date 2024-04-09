@@ -45,11 +45,8 @@ namespace System
         private void activeTab()
         {
             lblAvailableUnit.ForeColor = Color.White;
-            lblOccupiedUnit.ForeColor = Color.Black;
             lblAvailableUnit.BackColor = Color.FromArgb(76, 205, 153);
             lblCheckIcon.BackColor = Color.FromArgb(76, 205, 153);
-            lblOccupiedUnit.BackColor = Color.Transparent;
-            lblOccuIcon.BackColor = Color.Transparent;
             pnlAvailUnit.Visible = true;
             pnlOccUnit.Visible = false;
         }
@@ -91,11 +88,8 @@ namespace System
         private void lblAvailableUnit_Click(object sender, EventArgs e)
         {
             lblAvailableUnit.ForeColor = Color.White;
-            lblOccupiedUnit.ForeColor = Color.Black;
             lblAvailableUnit.BackColor = Color.FromArgb(76, 205, 153);
             lblCheckIcon.BackColor = Color.FromArgb(76, 205, 153);
-            lblOccupiedUnit.BackColor = Color.Transparent;
-            lblOccuIcon.BackColor = Color.Transparent;
             pnlAvailUnit.Visible = true;
             pnlOccUnit.Visible = false;
         }
@@ -105,33 +99,10 @@ namespace System
         {
             lblAvailableUnit.BackColor = Color.FromArgb(76, 205, 153);
             lblCheckIcon.BackColor = Color.FromArgb(76, 205, 153);
-            lblOccupiedUnit.BackColor = Color.Transparent;
-            lblOccuIcon.BackColor = Color.Transparent;
             pnlAvailUnit.Visible = true;
             pnlOccUnit.Visible = false;
         }
 
-        private void lblOccupiedUnit_Click(object sender, EventArgs e)
-        {
-            lblOccupiedUnit.ForeColor = Color.White;
-            lblAvailableUnit.ForeColor = Color.Black;
-            lblOccuIcon.BackColor = Color.FromArgb(76, 205, 153);
-            lblOccupiedUnit.BackColor = Color.FromArgb(76, 205, 153);
-            lblCheckIcon.BackColor = Color.Transparent;
-            lblAvailableUnit.BackColor = Color.Transparent;
-            pnlAvailUnit.Visible = false;
-            pnlOccUnit.Visible = true;
-        }
-
-        private void lblOccuIcon_Click(object sender, EventArgs e)
-        {
-            lblOccuIcon.BackColor = Color.FromArgb(76, 205, 153);
-            lblOccupiedUnit.BackColor = Color.FromArgb(76, 205, 153);
-            lblCheckIcon.BackColor = Color.Transparent;
-            lblAvailableUnit.BackColor = Color.Transparent;
-            pnlAvailUnit.Visible = false;
-            pnlOccUnit.Visible = true;
-        }
 
         private void pnlAvailUnit_Paint(object sender, PaintEventArgs e)
         {
